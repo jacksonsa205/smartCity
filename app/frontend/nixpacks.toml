@@ -1,0 +1,23 @@
+# Configuração para projetos separados de backend e frontend no Railway
+
+# Configuração para o backend
+[phases.backend]
+dependsOn = ["setup"]
+cmds = [
+    "cd app/backend && npm install"
+]
+
+[start.backend]
+cmd = "cd app/backend && npm start"
+port = 5000  # Porta padrão para o backend
+
+# Configuração para o frontend
+[phases.frontend]
+dependsOn = ["setup"]
+cmds = [
+    "cd app/frontend && npm install"
+]
+
+[start.frontend]
+cmd = "cd app/frontend && npm start"
+port = 3000  # Porta padrão para o frontend (React development server)
